@@ -13,6 +13,9 @@ RUN sudo ./aws/install
 # cleanup zip
 RUN rm awscliv2.zip
 
+# fix permissions
+RUN sudo chown -R $USER:$GROUP ~/.npm && sudo chown -R $USER:$GROUP ~/.config
+
 # install yarn for using encore
 RUN yarn install
 
